@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1552704378 source:c:\users\国王\desktop\邓国旺的练习代码\saolei_1111\main.c
+	<stdio.h>
+	<time.h>
+	<stdlib.h>
+
