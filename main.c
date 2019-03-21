@@ -4,22 +4,22 @@
 int ee = 0;
 typedef struct gg
 {
-	int a;//ĞĞ
-	int b;//ÁĞ
-	int c;//À×Êı
-	int **seem_1;//½öÓÃÓÚ³õÊ¼»¯
-	int **seem_2;//ÓÃÓÚÓÃ»§²Ù×÷Ö®ºóµÄÏÔÊ¾
+	int a;//è¡Œ
+	int b;//åˆ—
+	int c;//é›·æ•°
+	int **seem_1;//ä»…ç”¨äºåˆå§‹åŒ–
+	int **seem_2;//ç”¨äºç”¨æˆ·æ“ä½œä¹‹åçš„æ˜¾ç¤º
 }Game;
-void answer(Game *tab);//´ğ°¸º¯Êı
-void eye(Game* tab);//ÏÔÊ¾º¯Êı
-int ** space(int n, int m);//ÉêÇëÉ¨À×¿Õ¼äµÄº¯Êı
-void show(Game *tab, int e, int f);//ÏÔÊ¾ÖÜÎ§ÓĞ¶àÉÙÀ×µÄº¯Êı
-void nn(Game *tab, int **n, int er, int ar, int wr);//²¼À×º¯Êı
+void answer(Game *tab);//ç­”æ¡ˆå‡½æ•°
+void eye(Game* tab);//æ˜¾ç¤ºå‡½æ•°
+int ** space(int n, int m);//ç”³è¯·æ‰«é›·ç©ºé—´çš„å‡½æ•°
+void show(Game *tab, int e, int f);//æ˜¾ç¤ºå‘¨å›´æœ‰å¤šå°‘é›·çš„å‡½æ•°
+void nn(Game *tab, int **n, int er, int ar, int wr);//å¸ƒé›·å‡½æ•°
 void tozero(int **n, int x, int y);
-void yer(Game*tab);//ÓÃ»§ÊıÊäÈëµÄ×ø±ê
-void menu(Game*tab);//ÌáÊ¾º¯Êı
-void release(Game *tab, int oo);//ÊÍ·ÅÉêÇë¿Õ¼äµÄº¯Êı
-int show_rr(Game *tab, int e, int f);//ÏÔÊ¾Ò»¸ñÖÜÎ§ÓĞ¶àÉÙ¸öÀ×
+void yer(Game*tab);//ç”¨æˆ·æ•°è¾“å…¥çš„åæ ‡
+void menu(Game*tab);//æç¤ºå‡½æ•°
+void release(Game *tab, int oo);//é‡Šæ”¾ç”³è¯·ç©ºé—´çš„å‡½æ•°
+int show_rr(Game *tab, int e, int f);//æ˜¾ç¤ºä¸€æ ¼å‘¨å›´æœ‰å¤šå°‘ä¸ªé›·
 int main()
 {
 	Game tab;
@@ -27,22 +27,22 @@ int main()
 	menu(&tab);
 	return 0;
 }
-void menu(Game *tab)//ÌáÊ¾º¯Êı
+void menu(Game *tab)//æç¤ºå‡½æ•°
 {
-	printf("Çë°´ÕÕÌáÊ¾½øĞĞÓÎÏ·\n");
-	printf("ÇëÎÊÄãÏëÍæ¶à´ó¹æ¸ñµÄÉ¨À×(n*m)\n");
-	printf("ÇëÊäÈënºÍm\n");
+	printf("è¯·æŒ‰ç…§æç¤ºè¿›è¡Œæ¸¸æˆ\n");
+	printf("è¯·é—®ä½ æƒ³ç©å¤šå¤§è§„æ ¼çš„æ‰«é›·(n*m)\n");
+	printf("è¯·è¾“å…¥nå’Œm\n");
 	scanf("%d%d", &tab->a, &tab->b);
 	tab->seem_1 = space(tab->a, tab->b);
 	tab->seem_2 = space(tab->a, tab->b);
 	tozero(tab->seem_1, tab->a, tab->b);
 	tozero(tab->seem_2, tab->a, tab->b);
-	printf("ÇëÊäÈëÀ×µÄÊıÁ¿:\n");
+	printf("è¯·è¾“å…¥é›·çš„æ•°é‡:\n");
 	scanf("%d", &tab->c);
 	nn(tab, tab->seem_1, tab->a, tab->b, tab->c);
 	answer(tab);
 	printf("\n");
-	printf("\t\t\t\t\t\t\tÓÎÏ·¿ªÊ¼\n");
+	printf("\t\t\t\t\t\t\tæ¸¸æˆå¼€å§‹\n");
     printf("\n");
 	eye(tab);
 	while (1)
@@ -51,7 +51,7 @@ void menu(Game *tab)//ÌáÊ¾º¯Êı
 	}
 
 }
-int ** space(int n, int m)//ÉêÇëÉ¨À×¿Õ¼äµÄº¯Êı
+int ** space(int n, int m)//ç”³è¯·æ‰«é›·ç©ºé—´çš„å‡½æ•°
 {
 	int **p;
 	int i = 0;
@@ -62,7 +62,7 @@ int ** space(int n, int m)//ÉêÇëÉ¨À×¿Õ¼äµÄº¯Êı
 	}
 	return p;
 }
-void answer(Game *tab)//´ğ°¸º¯Êı
+void answer(Game *tab)//ç­”æ¡ˆå‡½æ•°
 {
 	for (int i = 0; i<tab->a; i++)
 	{
@@ -77,7 +77,7 @@ void answer(Game *tab)//´ğ°¸º¯Êı
 		printf("\n");
 	}
 }
-void tozero(int **n, int x, int y)// ÖÃÁã
+void tozero(int **n, int x, int y)// ç½®é›¶
 {
 	for (int i = 0; i<x; i++)
 		for (int j = 0; j<y; j++)
@@ -85,7 +85,7 @@ void tozero(int **n, int x, int y)// ÖÃÁã
 			n[i][j] = 0;
 		}
 }
-void nn(Game *tab, int **n, int er, int ar, int wr)//²¼À×º¯Êı
+void nn(Game *tab, int **n, int er, int ar, int wr)//å¸ƒé›·å‡½æ•°
 {
 	for (int i = 0; i<wr;)
 	{
@@ -116,10 +116,10 @@ void eye(Game *tab)
 			printf("|");
 			switch (tab->seem_2[i][j])
 			{
-			case 0://À×
+			case 0://é›·
 				printf("**");
 				break;
-			case 1://ÏÔÊ¾ÖÜÎ§ÓĞ¶àÉÙÀ×
+			case 1://æ˜¾ç¤ºå‘¨å›´æœ‰å¤šå°‘é›·
 				printf("%2d", show_rr(tab, i, j));
 				break;
 			case 2:
@@ -137,28 +137,28 @@ void eye(Game *tab)
 	}
 
 }
-void yer(Game *tab)//ÓÃ»§ÊıÊäÈëµÄ×ø±ê,´¦Àíseem_2µÄÊı¾İ
+void yer(Game *tab)//ç”¨æˆ·æ•°è¾“å…¥çš„åæ ‡,å¤„ç†seem_2çš„æ•°æ®
 {
 	char ae;
 	int ge,fe;
-	printf("ÇëÊäÈë×ø±ê£¨ĞĞ,ÁĞ£©\n");
+	printf("è¯·è¾“å…¥åæ ‡ï¼ˆè¡Œ,åˆ—ï¼‰\n");
 	do{
-        scanf("%d%d", &ge, &fe);//¶ÁÈ¡ÓÃ»§ÊäÈëµÄÑ¡Ïî(nÎªµã»÷,yÎª±ê¼Ç)
+        scanf("%d%d", &ge, &fe);//è¯»å–ç”¨æˆ·è¾“å…¥çš„é€‰é¡¹(nä¸ºç‚¹å‡»,yä¸ºæ ‡è®°)
 	    getchar();
-	    if(ge>0||fe>0||(ge-1)<=tab->a||(fe-1)<=tab->a)
-            printf("ÊäÈë´íÎó,ÇëÖØĞÂÊäÈë:\n");
+	    if(ge<0||fe<0||(ge-1)>=tab->a||(fe-1)>=tab->a)
+            printf("è¾“å…¥é”™è¯¯,è¯·é‡æ–°è¾“å…¥:\n");
         else
             break;
 	  }while(1);
 	int te=ge-1;
 	int ie=fe-1;
-	printf("ÊäÈënÎªµã¿ª£¬ÊäÈëyÎª±ê¼Ç\n");
+	printf("è¾“å…¥nä¸ºç‚¹å¼€ï¼Œè¾“å…¥yä¸ºæ ‡è®°\n");
 	scanf("%c", &ae);
 	if (ae == 'n')
 	{
 	    if(tab->seem_1[te][ie]==1)
         {
-            printf("ÓÎÏ·½áÊø£¬ÄãÊäÁË\n");
+            printf("æ¸¸æˆç»“æŸï¼Œä½ è¾“äº†\n");
             release(tab, tab->a);
             exit(0);
         }
@@ -182,14 +182,14 @@ void yer(Game *tab)//ÓÃ»§ÊıÊäÈëµÄ×ø±ê,´¦Àíseem_2µÄÊı¾İ
 			if (ee == tab->c)
 			{
 				release(tab, tab->a);
-				printf("ÄãÓ®ÁË£¡\n");
+				printf("ä½ èµ¢äº†ï¼\n");
 				exit(0);
 			}
 		}
 	}
 	eye(tab);
 }
-void show(Game *tab, int e, int f)//ÏÔÊ¾Ò»¸ñÖÜÎ§8¸ñÓĞ¶àÉÙÀ×µÄº¯Êı
+void show(Game *tab, int e, int f)//æ˜¾ç¤ºä¸€æ ¼å‘¨å›´8æ ¼æœ‰å¤šå°‘é›·çš„å‡½æ•°
 {
 			if (e<0 || f<0)
                 return;
@@ -197,7 +197,7 @@ void show(Game *tab, int e, int f)//ÏÔÊ¾Ò»¸ñÖÜÎ§8¸ñÓĞ¶àÉÙÀ×µÄº¯Êı
                 return;
             if ((tab->seem_2[e][f] == 0 || tab->seem_2[e][f] == 4 ) && tab->seem_1[e][f] == 0)
          {
-            if(show_rr(tab,e,f)>0)//##################################################################0ÊÇÀ×À×£¬1ÏÔÊ¾À×µÄ¸öÊı
+            if(show_rr(tab,e,f)>0)//##################################################################0æ˜¯é›·é›·ï¼Œ1æ˜¾ç¤ºé›·çš„ä¸ªæ•°
                 tab->seem_2[e][f]=1;
 			else
 			{
@@ -214,7 +214,7 @@ void show(Game *tab, int e, int f)//ÏÔÊ¾Ò»¸ñÖÜÎ§8¸ñÓĞ¶àÉÙÀ×µÄº¯Êı
         }
 	return;
 }
-void release(Game *tab, int oo)//ÊÍ·ÅÉêÇë¿Õ¼äµÄº¯Êı
+void release(Game *tab, int oo)//é‡Šæ”¾ç”³è¯·ç©ºé—´çš„å‡½æ•°
 {
 	int **n = tab->seem_1;
 	int **v = tab->seem_2;
@@ -226,7 +226,7 @@ void release(Game *tab, int oo)//ÊÍ·ÅÉêÇë¿Õ¼äµÄº¯Êı
 	free(n);
 	free(v);
 }
-int show_rr(Game *tab, int e, int f)//ÏÔÊ¾Ò»¸ñÖÜÎ§ÓĞ¶àÉÙ¸öÀ×
+int show_rr(Game *tab, int e, int f)//æ˜¾ç¤ºä¸€æ ¼å‘¨å›´æœ‰å¤šå°‘ä¸ªé›·
 {
     int i, j;
 	int count = 0;
@@ -242,7 +242,7 @@ int show_rr(Game *tab, int e, int f)//ÏÔÊ¾Ò»¸ñÖÜÎ§ÓĞ¶àÉÙ¸öÀ×
 				continue;
 			}
 			else if (tab->seem_1[i][j]==1)
-				count++;//¼ÆËãÀ×Êı
+				count++;//è®¡ç®—é›·æ•°
 		}
 	return count;
 
